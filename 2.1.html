@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>hello world</title>
+	<script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">{{content}}<!-- 差值表达式 --></div>  <!-- 也可以写为 <div v-test="content"></div> 会转译<div v-html="content"></div> -->
+    <script>
+    	var app = new Vue({
+            el:'#app',
+            data:{
+            	content:'hello world'
+            }
+    	})
+    	setTimeout(function(){
+    		app.$data.content = 'bye world'
+    	},2000)
+    </script>
+</body>
+</html>
